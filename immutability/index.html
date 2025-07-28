@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Immutability Example</title>
+</head>
+<body>
+
+  <h2>🛡️ Immutability Principle Demo</h2>
+  <button onclick="addNumber()">Add Number</button>
+
+  <p>Original Array: <span id="original"></span></p>
+  <p>New Array: <span id="newArray"></span></p>
+
+  <script>
+    const nums = [1, 2, 3]; // original array
+    document.getElementById("original").innerText = nums.join(", ");
+
+    function addNumber() {
+      const newNums = [...nums, 4]; // 🛡️ immutable way
+      document.getElementById("newArray").innerText = newNums.join(", ");
+    }
+  </script>
+
+</body>
+</html>
+
+
+<!-- Immutability means not changing the original data — instead, we create a new copy when we want to update something. -->

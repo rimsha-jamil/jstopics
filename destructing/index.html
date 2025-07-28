@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Destructuring Example</title>
+</head>
+<body>
+
+  <h2>💡 Object & Array Destructuring</h2>
+  <button onclick="showDestructuring()">Click to Destructure</button>
+
+  <p id="objectResult"></p>
+  <p id="arrayResult"></p>
+
+  <script>
+    function showDestructuring() {
+      // Object Destructuring
+      const user = { name: "Rimsha", age: 23 };
+      const { name, age } = user; // destructuring
+
+      // Array Destructuring
+      const numbers = [10, 20, 30];
+      const [first, second] = numbers; // destructuring
+
+      // Showing results
+      document.getElementById('objectResult').innerText = 
+        `👩‍🦰 Name: ${name}, Age: ${age}`;
+
+      document.getElementById('arrayResult').innerText = 
+        `🔢 First: ${first}, Second: ${second}`;
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- 🔹 What is Destructuring?
+Destructuring means:
+
+👉 Taking values out of an object or array
+👉 And saving them in variables quickly. -->

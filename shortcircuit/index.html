@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Short-Circuit Evaluation</title>
+</head>
+<body>
+
+  <h2>🔄 Short-Circuit Evaluation Example</h2>
+
+  <button onclick="checkName()">Check Name</button>
+
+  <p id="result"></p>
+
+  <script>
+    function checkName() {
+      const name = "Rimsha"; // try changing to "Rimsha"
+
+      const displayName = name || "Guest";
+      const greeting = name && "Hi, Rimsha!";
+
+      document.getElementById('result').innerText =
+        `Name shown: ${displayName}\nGreeting shown: ${greeting}`;
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- This is using OR (||)
+
+It checks:
+
+If name is empty or falsy, it uses "Guest" instead
+
+If name has a value like "Rimsha", it will use that
+
+So this line means:
+👉 "If the user didn’t give a name, show 'Guest'. Otherwise, show their name."
+
+This is using AND (&&)
+
+It checks:
+
+If name is truthy, then it returns "Hi, Rimsha!"
+
+If name is empty, it returns ""
+
+So this line means:
+👉 "Only show the greeting if a name is given."-->

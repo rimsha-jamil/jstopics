@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spread Operator Example</title>
+</head>
+<body>
+
+  <h2>Spread Operator Example</h2>
+  <button id="copyBtn">Copy & Add to Array</button>
+  <p id="output"></p>
+
+  <script>
+    const originalFruits = ['Apple', 'Banana', 'Mango'];
+
+    document.getElementById("copyBtn").addEventListener("click", function () {
+      // Use spread operator to copy and add more
+      const newFruits = [...originalFruits, 'Orange', 'Grapes'];
+
+      document.getElementById("output").innerText = 
+        "Original: " + originalFruits.join(', ') + 
+        "\nNew: " + newFruits.join(', ');
+    });
+  </script>
+
+</body>
+</html>
+
+<!-- The spread operator is ... (three dots) — and it means:
+
+"Take everything out of this array (or object) and lay it out one by one." -->

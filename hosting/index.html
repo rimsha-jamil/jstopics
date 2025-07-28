@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hoisting Example</title>
+</head>
+<body>
+
+  <h2>Hoisting Examples</h2>
+
+  <button onclick="testVar()">Test var</button>
+  <button onclick="testLet()">Test let</button>
+  <button onclick="testFunc()">Test Function Declaration</button>
+  <button onclick="testFuncExpr()">Test Function Expression</button>
+
+  <p id="output"></p>
+
+  <script>
+    function testVar() {
+      document.getElementById("output").innerText = "var test:\n";
+      try {
+        document.getElementById("output").innerText += a; // undefined
+        var a = 10;
+        document.getElementById("output").innerText += "\nAfter assignment: " + a;
+      } catch (error) {
+        document.getElementById("output").innerText += error;
+      }
+    }
+
+    function testLet() {
+      document.getElementById("output").innerText = "let test:\n";
+      try {
+        document.getElementById("output").innerText += b; // Error
+        let b = 20;
+        document.getElementById("output").innerText += "\nAfter assignment: " + b;
+      } catch (error) {
+        document.getElementById("output").innerText += error;
+      }
+    }
+
+    function testFunc() {
+      document.getElementById("output").innerText = "Function Declaration:\n";
+      try {
+        greet(); // Works
+        function greet() {
+          document.getElementById("output").innerText += "Hello sir!";
+        }
+      } catch (error) {
+        document.getElementById("output").innerText += error;
+      }
+    }
+
+    function testFuncExpr() {
+      document.getElementById("output").innerText = "Function Expression:\n";
+      try {
+        greetExpr(); // Error
+        var greetExpr = function () {
+          document.getElementById("output").innerText += "Hi from expression!";
+        };
+      } catch (error) {
+        document.getElementById("output").innerText += error;
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- JavaScript automatically moves some lines (like var and functions) to the top before running the code.
+
+You don’t see it — JavaScript does it in the background. -->

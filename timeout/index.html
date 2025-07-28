@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timeout vs Interval</title>
+</head>
+<body>
+
+  <button onclick="showTimeout()">Start Timeout</button>
+  <button onclick="startInterval()">Start Interval</button>
+  <p id="output"></p>
+
+  <script>
+    function showTimeout() {
+      setTimeout(() => {
+        document.getElementById('output').innerText = "⏳ Timeout: This ran after 2 seconds.";
+      }, 2000);
+    }
+
+    function startInterval() {
+      setInterval(() => {
+        const now = new Date().toLocaleTimeString();
+        document.getElementById('output').innerText = "⏱ Interval: " + now;
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
+
+
+<!--  1. setTimeout()
+Runs a function once after a delay.
+
+🔁 2. setInterval()
+Runs a function again and again after fixed time.-->

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arrow vs Normal Function</title>
+</head>
+<body>
+
+  <h2>Arrow vs Normal Function and this</h2>
+
+  <button id="normalBtn">Normal Function</button>
+  <button id="arrowBtn">Arrow Function</button>
+
+  <p id="output"></p>
+
+  <script>
+    const obj = {
+      name: "Rimsha",
+
+      normalFunction: function () {
+        document.getElementById("output").innerText = "Normal: Hello " + this.name;
+      },
+
+      arrowFunction: () => {
+        document.getElementById("output").innerText = "Arrow: Hello " + this.name;
+      }
+    };
+
+    document.getElementById("normalBtn").addEventListener("click", function () {
+      obj.normalFunction();
+    });
+
+    document.getElementById("arrowBtn").addEventListener("click", function () {
+      obj.arrowFunction();
+    });
+  </script>
+
+</body>
+</html>
+
+<!-- Arrow functions DO NOT have their own this.
+They use this from their parent (outer) function or scope. -->

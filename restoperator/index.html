@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rest Operator Example</title>
+</head>
+<body>
+
+  <h2>Click to Add Numbers</h2>
+  <button onclick="showSum()">Add Numbers</button>
+
+  <p id="output"></p>
+
+  <script>
+    // Function using the rest operator
+    function sum(...numbers) {
+      return numbers.reduce((a, b) => a + b, 0);
+    }
+
+    // This function runs when the button is clicked
+    function showSum() {
+      const result = sum(5, 10, 15); // You can pass any number of values
+      document.getElementById("output").innerText = "The sum is: " + result;
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- The ... (three dots) is called the Rest Operator when used in function parameters.
+
+It collects all the extra values passed to a function and puts them into an array. -->
+
+<!-- ...numbers → Collects all numbers into an array.
+
+reduce() → Adds them together. -->

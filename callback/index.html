@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Callbacks & Higher-Order Functions</title>
+</head>
+<body>
+
+  <h2>Callback & Higher-Order Function Example</h2>
+
+  <button onclick="startTask()">Run Callback Function</button>
+  <br><br>
+  <button onclick="useHigherOrder()">Run Higher-Order Function</button>
+
+  <p id="output"></p>
+
+  <script>
+    // ✅ Callback Function
+    function startTask() {
+      document.getElementById("output").innerText = "Doing a task...\n";
+      // Call the function and pass a callback
+      doSomethingLater(function () {
+        document.getElementById("output").innerText += "Task done! ✅ (Callback called)";
+      });
+    }
+
+    function doSomethingLater(callback) {
+      // Simulate a task (like a delay)
+      setTimeout(() => {
+        callback(); // Call the callback function
+      }, 1000);
+    }
+
+    // ✅ Higher-Order Function
+    function useHigherOrder() {
+      const doubler = createMultiplier(2); // this returns a function
+      const result = doubler(5); // use the returned function
+      document.getElementById("output").innerText = "Double of 5 is: " + result;
+    }
+
+    function createMultiplier(factor) {
+      // This returns a function → higher-order
+      return function (num) {
+        return num * factor;
+      };
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- Callback	A function that is passed as an argument to another function and run later (like when task completes).
+Higher-Order Function	A function that returns another function, or takes a function as input. -->

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Array Methods Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f7f7f7;
+    }
+    h2 {
+      color: #333;
+    }
+    section {
+      background-color: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 8px 15px;
+      margin-top: 10px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>JavaScript Array Methods (map, filter, reduce, forEach, find)</h2>
+
+  <!-- .map() -->
+  <section>
+    <h3>1. .map() – Double all numbers</h3>
+    <button onclick="useMap()">Run .map()</button>
+    <p id="mapResult"></p>
+  </section>
+
+  <!-- .filter() -->
+  <section>
+    <h3>2. .filter() – Keep numbers > 1</h3>
+    <button onclick="useFilter()">Run .filter()</button>
+    <p id="filterResult"></p>
+  </section>
+
+  <!-- .reduce() -->
+  <section>
+    <h3>3. .reduce() – Get total sum</h3>
+    <button onclick="useReduce()">Run .reduce()</button>
+    <p id="reduceResult"></p>
+  </section>
+
+  <!-- .forEach() -->
+  <section>
+    <h3>4. .forEach() – Loop through all numbers</h3>
+    <button onclick="useForEach()">Run .forEach()</button>
+    <p id="forEachResult"></p>
+  </section>
+
+  <!-- .find() -->
+  <section>
+    <h3>5. .find() – Find number 2</h3>
+    <button onclick="useFind()">Run .find()</button>
+    <p id="findResult"></p>
+  </section>
+
+  <script>
+    const numbers = [1, 2, 3,4,5];
+
+    function useMap() {
+      const doubled = numbers.map(num => num * 2);
+      document.getElementById("mapResult").innerText = "Doubled: " + doubled.join(', ');
+    }
+
+    function useFilter() {
+      const filtered = numbers.filter(num => num > 3);
+      document.getElementById("filterResult").innerText = "Filtered: " + filtered.join(', ');
+    }
+
+    function useReduce() {
+      const total = numbers.reduce((sum, num) => sum + num, 0);
+      document.getElementById("reduceResult").innerText = "Total: " + total;
+    }
+
+    function useForEach() {
+      let text = "Items: ";
+      numbers.forEach(num => {
+        text += num + " ";
+      });
+      document.getElementById("forEachResult").innerText = text;
+    }
+
+    function useFind() {
+      const result = numbers.find(num => num === 2);
+      document.getElementById("findResult").innerText = "Found: " + result;
+    }
+  </script>
+
+</body>
+</html>
+ <!-- .map()	Creates a new array by changing every element.
+.filter()	Returns only the elements that match a condition.
+.reduce()	Combines all elements into one value (like sum).
+.forEach()	Runs a function on each item (doesn’t return anything).
+.find()	Finds and returns the first item that matches a rule. -->

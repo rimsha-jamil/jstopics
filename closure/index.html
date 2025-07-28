@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Closure Counter</title>
+</head>
+<body>
+
+  <h2>Closure Counter Example</h2>
+  <button id="clickBtn">Click Me</button>
+  <p id="result">You clicked 0 times</p>
+
+  <script>
+    // This is our closure example
+    function createClickCounter() {
+      let count = 0;
+
+      return function () {
+        count++;
+        document.getElementById("result").innerText = `You clicked ${count} times`;
+      };
+    }
+
+    const handleClick = createClickCounter();
+
+    document.getElementById("clickBtn").addEventListener("click", handleClick);
+  </script>
+
+</body>
+</html>
+
+  <!-- The inner function “remembers” the variable count from the outer function, even after the outer function is done.
+
+That remembering ability is called a closure. -->

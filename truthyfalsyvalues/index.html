@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Truthy & Falsy Example</title>
+</head>
+<body>
+
+  <h2>Enter your name:</h2>
+  <input type="text" id="nameInput" placeholder="Type your name here" />
+  <button onclick="checkName()">Submit</button>
+
+  <p id="result"></p>
+
+  <script>
+    function checkName() {
+      const name = document.getElementById('nameInput').value.trim();
+      const result = document.getElementById('result');
+
+      if (name) {
+        result.innerText = "Welcome, " + name + "!";
+      } else {
+        result.innerText = "⚠️ Please enter your name.";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- ✅ What are Falsy values?
+These values are considered false when checked in a condition (like an if statement). There are only 6 falsy values:
+false       // Boolean false
+0           // The number zero
+''          // Empty string
+null        // No value
+undefined   // Value not assigned
+NaN -->
+
+
+<!-- What are Truthy values?
+Anything else that is not falsy is considered truthy.
+true
+'hello'   // non-empty string
+42        // any non-zero number
+[]        // empty array
+{}        // empty object
+'0'       // string zero is truthy
+'false'   // string 'false' is truthy -->
+   

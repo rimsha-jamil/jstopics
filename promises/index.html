@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Promises & Async/Await</title>
+</head>
+<body>
+
+  <h2>Promises vs Async/Await</h2>
+
+  <button onclick="runPromise()">Run Promise</button>
+  <button onclick="runAsync()">Run Async/Await</button>
+
+  <p id="output"></p>
+
+  <script>
+    // ✅ Promise Example
+    function runPromise() {
+      document.getElementById("output").innerText = "Running Promise...";
+      
+      let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("✅ Promise: Task complete!");
+        }, 1000);
+      });
+
+      promise.then((message) => {
+        document.getElementById("output").innerText = message;
+      });
+    }
+
+    // ✅ Async/Await Example
+    async function runAsync() {
+      document.getElementById("output").innerText = "Running Async/Await...";
+      
+      let result = await new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("✅ Async/Await: Task complete!");
+        }, 1000);
+      });
+
+      document.getElementById("output").innerText = result;
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- Promise	A way to handle work that finishes in the future (e.g., API call)
+then()	Runs when the Promise succeeds
+catch()	Runs when the Promise fails
+async	Declares an async function
+await	Waits for a Promise to complete inside an async function -->

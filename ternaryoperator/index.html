@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ternary Operator</title>
+</head>
+<body>
+
+  <h2>🔀 Ternary Operator Example</h2>
+  <button onclick="checkLogin(true)">Login True</button>
+  <button onclick="checkLogin(false)">Login False</button>
+
+  <p id="result"></p>
+
+  <script>
+    function checkLogin(isLoggedIn) {
+      const message = isLoggedIn ? "✅ Welcome!" : "❌ Please login first.";
+      document.getElementById('result').innerText = message;
+    }
+  </script>
+
+</body>
+</html>
+
+
+<!-- The ternary operator is a one-line shortcut for if...else, written as:
+condition ? value_if_true : value_if_false. -->

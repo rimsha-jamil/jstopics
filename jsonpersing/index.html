@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON Example</title>
+</head>
+<body>
+
+  <h2>JSON.stringify() and JSON.parse()</h2>
+  <button onclick="handleJSON()">Click to Convert</button>
+  <p id="output"></p>
+
+  <script>
+    function handleJSON() {
+      const obj = { name: "Rimsha", age: 23 };
+
+      // Step 1: Convert object to string
+      const jsonString = JSON.stringify(obj);
+
+      // Step 2: Convert string back to object
+      const parsedObj = JSON.parse(jsonString);
+
+      document.getElementById("output").innerText =
+        "JSON String: " + jsonString + "\n" +
+        "Parsed Object Name: " + parsedObj.name + "\n" +
+        "Parsed Object Age: " + parsedObj.age;
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- ✅ JSON.stringify()
+Converts a JavaScript object → into a JSON string (text)
+
+✅ JSON.parse()
+Converts a JSON string (text) → back into a JavaScript object -->

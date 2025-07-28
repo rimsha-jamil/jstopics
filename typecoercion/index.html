@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Type Coercion: == vs ===</title>
+</head>
+<body>
+
+  <h2>🔍 Type Coercion: == vs ===</h2>
+
+  <button onclick="compareLoose()">Loose Comparison (==)</button>
+  <button onclick="compareStrict()">Strict Comparison (===)</button>
+
+  <p id="result"></p>
+
+  <script>
+    const a = "5";
+    const b = 5;
+
+    function compareLoose() {
+      const result = (a == b); // JavaScript converts "5" to number 5
+      document.getElementById("result").innerText = `"5" == 5 → ${result} ✅ (types are different, but values match)`;
+    }
+
+    function compareStrict() {
+      const result = (a === b); // Types are different: string !== number
+      document.getElementById("result").innerText = `"5" === 5 → ${result} ❌ (different types and no conversion)`;
+    }
+  </script>
+
+</body>
+</html>
+
+
+<!-- == (Loose Equality): Compares values after converting types if needed.
+👉 Example: "5" == 5 → true
+
+=== (Strict Equality): Compares values and types without conversion.
+👉 Example: "5" === 5 → false
+
+ -->

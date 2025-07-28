@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Object Example</title>
+</head>
+<body>
+
+  <h2>User Info (Using Object)</h2>
+
+  <button onclick="showUser()">Show My Info</button>
+
+  <p id="output"></p>
+
+  <script>
+    // Creating an object
+    const user = {
+      name: "Rimsha",
+      age: 23,
+      hobby: "Reading Books"
+    };
+
+    function showUser() {
+      // Accessing the object values
+      document.getElementById("output").innerText =
+        "Name: " + user.name + "\n" +
+        "Age: " + user.age + "\n" +
+        "Hobby: " + user.hobby;
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- An object in JavaScript is like a real-life thing that has properties (information or features).
+It stores data using key-value pairs (like a dictionary or ID card). -->

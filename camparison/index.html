@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shallow vs Deep Comparison</title>
+</head>
+<body>
+
+  <h2>🔍 Shallow vs Deep Object Comparison</h2>
+
+  <button onclick="shallowCompare()">Shallow Compare</button>
+  <button onclick="deepCompare()">Deep Compare</button>
+
+  <p id="result"></p>
+
+  <script>
+    // 🔹 Shallow Comparison
+    function shallowCompare() {
+      const a = { name: 'Rimsha' };
+      const b = { name: 'Rimsha' };
+
+      // Shallow: checks if a and b are the same object in memory
+      const result = (a === b);
+
+      document.getElementById('result').innerText = 
+        result 
+          ? '✅ Shallow: a and b are the same object.' 
+          : '❌ Shallow: a and b are NOT the same object (even if they look the same).';
+    }
+
+    // 🔹 Deep Comparison
+    function deepEqual(a, b) {
+      if (a === b) return true;
+
+      if (typeof a !== 'object' || a === null || typeof b !== 'object' || b === null) {
+        return false;
+      }
+
+      const keysA = Object.keys(a);
+      const keysB = Object.keys(b);
+
+      if (keysA.length !== keysB.length) return false;
+
+      for (let key of keysA) {
+        if (!keysB.includes(key) || !deepEqual(a[key], b[key])) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    function deepCompare() {
+      const a = { name: 'Rimsha' };
+      const b = { name: 'Rimsha' };
+
+      const result = deepEqual(a, b);
+
+      document.getElementById('result').innerText = 
+        result 
+          ? '✅ Deep: a and b are deeply equal.' 
+          : '❌ Deep: a and b are NOT deeply equal.';
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- 🔹 Shallow Comparison:
+Compares only the top-level reference of objects.
+Returns false even if objects look the same, but are stored separately in memory.
+
+🔸 Deep Comparison:
+Compares the actual content of objects at all levels.
+Returns true if all properties and nested values are exactly the same. -->

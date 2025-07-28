@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Storage Demo</title>
+</head>
+<body>
+
+  <h2>Local & Session Storage</h2>
+
+  <button onclick="saveToLocal()">Save to localStorage</button>
+  <button onclick="saveToSession()">Save to sessionStorage</button>
+  <button onclick="showValues()">Show Stored Values</button>
+
+  <p id="output"></p>
+
+  <script>
+    function saveToLocal() {
+      localStorage.setItem("name", "Rimsha");
+      alert("Saved to localStorage");
+    }
+
+    function saveToSession() {
+      sessionStorage.setItem("color", "Pink");
+      alert("Saved to sessionStorage");
+    }
+
+    function showValues() {
+      const name = localStorage.getItem("name");
+      const color = sessionStorage.getItem("color");
+
+      document.getElementById("output").innerText = 
+        `localStorage name: ${name || "Nothing saved"}\n` +
+        `sessionStorage color: ${color || "Nothing saved"}`;
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- localStorage: Stores data permanently in the browser (even after tab close or refresh).
+
+sessionStorage: Stores data only until the tab is closed. -->

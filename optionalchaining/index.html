@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Optional Chaining & Nullish Coalescing</title>
+</head>
+<body>
+
+  <h2>Optional Chaining & Nullish Coalescing Example</h2>
+
+  <button onclick="checkUser()">Check User Info</button>
+
+  <p id="output"></p>
+
+  <script>
+    function checkUser() {
+      const user = {
+        name: "Rimsha",
+        // address: { city: "Lahore" } // ← try uncommenting this
+      };
+
+      // Optional chaining
+      const city = user.address?.city;
+
+      // Nullish coalescing
+      const username = user.name ?? "Guest";
+
+      document.getElementById('output').innerText =
+        `City: ${city ?? "Not Provided"}\nName: ${username}`;
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- ✅ 1. Optional Chaining (?.)
+It helps you safely access properties of an object that might not exist — so your code doesn't crash 
+
+✅ 2. Nullish Coalescing (??)
+It provides a default value only if the value on the left is null or undefined.
+
+-->
